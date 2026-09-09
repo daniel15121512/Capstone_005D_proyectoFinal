@@ -26,8 +26,36 @@ Se utiliza una **Metodología Tradicional basada en el modelo en Cascada (Waterf
 4. Pruebas de Calidad (Unitarias y UAT).
 5. Despliegue (Containerización).
 
-## Diagrama de Arquitectura
+## Arquitectura de la solución
+CrediCheck utiliza una arquitectura modular basada en microservicios (containerizada), separando la interfaz de usuario, la API lógica, el motor predictivo y la persistencia de datos.
 
+La aplicación está desarrollada utilizando HTML/JS/CSS para el frontend, Python (FastAPI/Flask) para la lógica de negocio y la API, Scikit-Learn para el modelo de Machine Learning, y SQL Server para la base de datos relacional. Todo el ecosistema está orquestado mediante Docker.
 
+Arquitectura general:
+
+CREDICHECK: Aplicación Web FinTech
+
+CAPA DE PRESENTACIÓN: HTML5 | CSS3 | JS | Formulario de Simulación | Dashboard de Riesgo | Recomendaciones Educativas
+
+LÓGICA DE NEGOCIO (API): Python (FastAPI / Flask) | Controladores REST
+
+CAPA DE MACHINE LEARNING: Scikit-Learn | Pandas | Modelo de Clasificación de Riesgo
+
+CAPA DE DATOS: Microsoft SQL Server | Historial de Simulaciones
+
+INFRAESTRUCTURA: Docker | Docker-Compose
+
+## Arquitectura general (Diagrama)
+
+```mermaid
+graph TD
+A[💻 CREDICHECK: Aplicación Web FinTech] --> B[🖥️ PRESENTACIÓN: HTML/JS]
+B --> C[⚙️ LÓGICA DE NEGOCIO: API Python]
+C --> D[🧠 MACHINE LEARNING: Scikit-Learn]
+C --> E[💾 CAPA DE DATOS: SQL Server]
+F[🐳 INFRAESTRUCTURA: Docker] -. Orquesta .-> B
+F -. Orquesta .-> C
+F -. Orquesta .-> E
+```
 ---
 **Proyecto desarrollado para la asignatura Capstone - Ingeniería en Informática**
